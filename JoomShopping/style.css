@@ -1,0 +1,7 @@
+#table_shippings tr:nth-child(2n+1) {
+    display: none
+}
+#table_shippings td {
+    border: none;
+    padding: 0;
+}

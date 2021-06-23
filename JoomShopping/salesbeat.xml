@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.1" type="plugin" group="jshopping" method="upgrade">
+	<name>JoomShopping - Salesbeat</name>
+	<author>Salesbeat</author>
+	<creationDate>October, 2019</creationDate>
+	<copyright>Copyright © Salesbeat. All rights reserved.</copyright>
+	<license>Proprietary. Copyrighted Free Software</license>
+	<authorEmail>hi@salesbeat.pro</authorEmail>
+	<authorUrl>https://salesbeat.pro/</authorUrl>
+	<version>1.2.4</version>
+	<description><![CDATA[Developed & Powered by <a href="//salesbeat.pro/" target="_blank">Salesbeat</a>]]></description>
+	<files>
+		<filename plugin="salesbeat">salesbeat.php</filename>
+		<filename>ajax.php</filename>
+		<filename>script.js</filename>
+		<filename>style.css</filename>
+		<folder>params</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/plugins/jshopping/salesbeat/params">
+			<fieldset name="basic">  
+				<field name="api_token" type="text" label="API-токен" />
+				<field name="secret_token" type="text" label="Secret-токен" />
+				<field name="shipping_id" type="shippings" label="Способ доставки" />
+
+				<field name="payments_cash_id" type="payments" label="Оплата наличными" />
+				<field name="payments_card_id" type="payments" label="Оплата картой" />
+				<field name="payments_online_id" type="payments" label="Оплата онлайн" />
+
+				<field name="status_id" type="orderstatus" label="Подтвержденный статус" />
+				<field name="cancel_status_id" type="orderstatus" label="Отмененный статус" />
+
+				<field name="average_weight" type="text" label="Средний вес товара" />
+				<field name="weight_type" type="radio" class="radio btn-group" default="gr"
+					   label="Вес товара задан в" description="">
+					<option value="gr">Граммах</option>
+				</field>
+
+				<field name="width_id" type="extrafields" label="Свойство ширины товара" />
+				<field name="height_id" type="extrafields" label="Свойство высоты товара"/>
+				<field name="depth_id" type="extrafields" label="Свойство длины товара" />
+				<field name="average_width" type="text" label="Средняя ширина товара" />
+				<field name="average_height" type="text" label="Средняя высота товара" />
+				<field name="average_depth" type="text" label="Средняя длина товара" />
+
+				<field name="size_type" type="radio" class="radio btn-group" default="mm"
+					   label="Размеры товара заданы в" description=""
+					   showon="width_id!:0[AND]height_id!:0[AND]depth_id!:0">
+					<option value="mm">Миллиметрах</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>	   
+	<updateservers>
+		<server type="extension" priority="1" name="Salesbeat">https://app.salesbeat.pro/static/modules/joomshopping/salesbeat.xml</server>
+	</updateservers>
+</extension>       	       	     	        	    	          	
